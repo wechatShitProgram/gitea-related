@@ -108,6 +108,11 @@
     * PyPI
     * RubyGems
 
+## Context
+Gitea is sponsored by INBlockchain, Equinix Metal, Two Sigma, SoEBeS, Allspice, Towhee, Hostea, and all of the backers on Open Collective.
+
+
+
 ## Quality Attributes
 
 ### Cross-platform
