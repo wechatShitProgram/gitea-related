@@ -107,3 +107,34 @@
     * Nuget
     * PyPI
     * RubyGems
+
+## Quality Attributes
+
+### Cross-platform
+
+Gitea runs anywhere Go can compile for. It can run on multiple operating systems: Windows, macOS, Linux, etc. And also multiple CPU architectures: x86_64, i386, arm64, arm, risc-v, etc. Choose the one you love!
+
+### Easy to install
+
+As simple as run the binary for your platform. This also make other options easy, for example ship it with Docker, or get it packaged.
+
+### Lightweight
+
+Gitea has low minimal requirements and can run on an inexpensive Raspberry Pi. Save your machine energy!
+
+### Open Source
+
+Go get code.gitea.io/gitea! Join us by contributing to make this project even better. Don’t be shy to be a contributor!
+
+### Interoperability
+
+Gitea provides webhooks to notify an external system of any changes in repositories.
+Also, it provides OAuth/OAuth2 to login, making it easy to integrate with 3rd-party authenticate systems.
+
+### Security
+
+Gitea comes with CSRF and XSS protection and HTTPS support. This improves the security of the deployed instance.
+
+### Multi-database support
+
+Gitea is designed to support multiple databases, including MySQL, PostgreSQL, SQLite3, MSSQL, and TiDB. Allowing user to choose from their favourites.
