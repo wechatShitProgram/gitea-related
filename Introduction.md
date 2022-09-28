@@ -143,3 +143,17 @@ Gitea comes with CSRF and XSS protection and HTTPS support. This improves the se
 ### Multi-database support
 
 Gitea is designed to support multiple databases, including MySQL, PostgreSQL, SQLite3, MSSQL, and TiDB. Allowing user to choose from their favourites.
+
+
+## Key Drivers
+
+### Quality Attributes
+* Easy to install and configure
+* Low resource consuming
+* More platforms supported
+* 100% open source
+* Safe with 2FA support
+
+### Functional Requirements
+* More 3rd-party integrations
+* More functions in issue tracker
