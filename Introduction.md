@@ -153,6 +153,10 @@ Gitea is designed to support multiple databases, including MySQL, PostgreSQL, SQ
 * More platforms supported
 * 100% open source
 * Safe with 2FA support
+* Commit Signing
+* Verified Committers
+* Commit graph
+* Repository Activity
 
 ### Functional Requirements
 * More 3rd-party integrations
