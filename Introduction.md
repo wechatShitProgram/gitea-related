@@ -109,7 +109,8 @@
     * RubyGems
 
 ## Context
-Gitea is sponsored by INBlockchain, Equinix Metal, Two Sigma, SoEBeS, Allspice, Towhee, Hostea, and all of the backers on Open Collective.
+Gitea is sponsored by INBlockchain, Equinix Metal, Two Sigma, SoEBeS, Allspice, Towhee, Hostea, and all of the backers on Open Collective.  
+This project has been forked from Gogs since November of 2016, but a lot has changed.
 
 
 
