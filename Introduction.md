@@ -156,3 +156,8 @@ Gitea is designed to support multiple databases, including MySQL, PostgreSQL, SQ
 ### Functional Requirements
 * More 3rd-party integrations
 * More functions in issue tracker
+
+## Early Design Decision 
+Gitea shall consume a little resource.  
+Gitea shall support multiple platforms.  
+Gtiea shall provide an easy and fast self-hosted Git service.  
