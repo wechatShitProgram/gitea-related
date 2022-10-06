@@ -161,6 +161,4 @@ Gitea is designed to support multiple databases, including MySQL, PostgreSQL, SQ
 Gitea shall consume a little resource.  
 Gitea shall support multiple platforms.  
 Gtiea shall provide an easy and fast self-hosted Git service.  
-Gitea should be able to integrate OAuth2.  
-Gitea shall provide user with an web editor interface.  
 Gitea should be similar to existing Git hosting solutions hence users could migrate painlessly.
