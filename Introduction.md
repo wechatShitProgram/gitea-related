@@ -162,3 +162,26 @@ Gitea shall consume a little resource.
 Gitea shall support multiple platforms.  
 Gtiea shall provide an easy and fast self-hosted Git service.  
 Gitea should be similar to existing Git hosting solutions hence users could migrate painlessly.
+
+
+## Key Stakeholders
+
+### Programmer
+Responsible for software development
+
+#### Concerns
+* It should provide easy and overall git service.  
+* It should ensure security.
+
+### Company
+Funding for software development
+
+#### Concerns
+* It should consume a little resouce in order to reduce git server costs.
+
+## Technical Context
+* Secutiry  
+Gitea comes with CSRF and XSS protection and HTTPS support. This improves the security of the deployed instance.
+
+* Multiple OS support  
+Written with Go, Gitea can be done platform-independently across all platforms which Go supports, including Linux, macOS, and Windows, on x86, amd64, ARM and PowerPC architectures.
