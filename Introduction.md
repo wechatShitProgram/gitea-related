@@ -198,3 +198,7 @@ Gitea should support and follow git protocol because Gitea is a code version man
 It also have to utilise and integrate with the `git` tool since it is the most popular way to interact with git repositories.  
 Moreover, since `git` uses `openssh` and even more tools, gitea should track any update of these tools, in order to be  
 compatible with any deploy environments.
+
+* Parallel support
+It is inevitable that occasionally Gitea should handle incoming requests at the same time, for example, when two committers pushed
+to the same repository simultaneously.
