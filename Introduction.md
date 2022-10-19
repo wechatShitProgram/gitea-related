@@ -158,11 +158,15 @@ Gitea is designed to support multiple databases, including MySQL, PostgreSQL, SQ
 * More functions in issue tracker
 
 ## Early Design Decision 
-Gitea shall consume a little resource.  GitLab is  a all-in-one solution including CI/CD, gists, etc., where Gitea aims to only do the code management, issues, etc, without bulit-in CI/CD.  
-Gitea shall support multiple platforms. With Go, this can be done platform-independently across **all platforms** which Go supports, including Linux, macOS, and Windows, on x86, amd64, ARM and PowerPC architectures.  
-Gitea shall be easy to use. Gitea provides GUI, so that users can use it easily without entering commands on the command line.  
+Gitea shall consume a little resource. GitLab is a all-in-one solution including CI/CD, gists, etc.,
+where Gitea aims to only do the code management, issues, etc., without bulit-in CI/CD (but it still retained the ability
+to be integrated with 3rd-party CI/CD platforms, like Jenkins, via webhooks. This is a perfect balance of simplicity and ability).  
+Gitea shall support multiple platforms. With Go, this can be done platform-independently across **all platforms** which Go supports,
+including Linux, macOS, and Windows, on x86, amd64, ARM and PowerPC architectures.  
+Gitea shall be easy to use. Gitea provides GUI via web interface, so that end users can use it easily without entering commands on the command line.  
 Gtiea shall provide an easy and fast self-hosted Git service.  
-Gitea should be similar to existing Git hosting solutions hence users could migrate painlessly.
+Gitea should be similar to existing Git hosting solutions hence users could migrate from other solutions painlessly.
+Gitea should be able to migrate to another instance of server when required, by carefully designing its data structure and dependencies.
 
 
 ## Key Stakeholders
@@ -185,7 +189,12 @@ Funding for software development
 Gitea comes with CSRF and XSS protection and HTTPS support. This improves the security of the deployed instance.
 
 * Multiple OS support  
-Written with Go, Gitea can be done platform-independently across all platforms which Go supports, including Linux, macOS, and Windows, on x86, amd64, ARM and PowerPC architectures.
+Written with Go, Gitea can be platform-independent, without any explicit design, across all platforms which Go supports,
+including Linux, macOS, BSD-like OS's, Solaris, GNU Hurd, AIX, Windows, and even Android;
+on i386, amd64, MIPS, RISC-V, S390(X), ARM, SPARC and PowerPC architectures.
 
 * Support Git v2 protocol  
-Gitea should support and follow git protocol because Gitea is a code version management tool based on git command.
+Gitea should support and follow git protocol because Gitea is a code version management tool based on git command.  
+It also have to utilise and integrate with the `git` tool since it is the most popular way to interact with git repositories.  
+Moreover, since `git` uses `openssh` and even more tools, gitea should track any update of these tools, in order to be  
+compatible with any deploy environments.
