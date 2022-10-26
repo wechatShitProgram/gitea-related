@@ -148,24 +148,30 @@ Gitea is designed to support multiple databases, including MySQL, PostgreSQL, SQ
 
 ## Key Drivers
 
-### Quality Attributes
 * Low resource consuming
-* More platforms supported
+```
+Senario  
+source: user  
+stimulus: normal use  
+environment: normal operation  
+artifact: processors  
+response: occupy CPU and memory  
+response measure: the cost of CPU and memory should be low.  
+```
+* Cross-platform supported
+
 * Safe with 2FA support
 
-### Functional Requirements
-* More 3rd-party integrations
-* More functions in issue tracker
 
 ## Early Design Decision 
-Gitea shall consume a little resource. GitLab is a all-in-one solution including CI/CD, gists, etc.,
+* Gitea shall consume a little resource. GitLab is a all-in-one solution including CI/CD, gists, etc.,
 where Gitea aims to only do the code management, issues, etc., without bulit-in CI/CD (but it still retained the ability
 to be integrated with 3rd-party CI/CD platforms, like Jenkins, via webhooks. This is a perfect balance of simplicity and ability).  
-Gitea shall support multiple platforms. With Go, this can be done platform-independently across **all platforms** which Go supports,
+* Gitea shall support multiple platforms. With Go, this can be done platform-independently across **all platforms** which Go supports,
 including Linux, macOS, and Windows, on x86, amd64, ARM and PowerPC architectures.  
-Gitea shall be easy to use. Gitea provides GUI via web interface, so that end users can use it easily without entering commands on the command line.  
-Gtiea shall provide an easy and fast self-hosted Git service.  
-Gitea should be similar to existing Git hosting solutions hence users could migrate from other solutions painlessly.
+* Gitea shall be easy to use. Gitea provides GUI via web interface, so that end users can use it easily without entering commands on the command line.  
+  
+* Gitea should be similar to existing Git hosting solutions hence users could migrate from other solutions painlessly.
 Gitea should be able to migrate to another instance of server when required, by carefully designing its data structure and dependencies.
 
 
