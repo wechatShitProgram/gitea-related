@@ -151,17 +151,27 @@ Gitea is designed to support multiple databases, including MySQL, PostgreSQL, SQ
 * Low resource consuming
 ```
 Senario  
-source: user  
-stimulus: normal use  
-environment: normal operation  
-artifact: processors  
-response: occupy CPU and memory  
-response measure: the cost of CPU and memory should be low.  
+Source: user  
+Stimulus: normal use  
+Environment: normal operation / startup / shutdown  
+Artifact: processors  
+Response: occupy CPU and memory  
+Response measure: the cost of CPU and memory, and the start/stop time, should be low.  
 ```
+
 * Cross-platform supported
 
 * Safe with 2FA support
+```
+Senario
 
+Source: User
+Stimulus: Normal use
+Environment: Normal operation
+Artiface: Communication channels
+Response: Log user in if TOTP code is correct
+Response measure: The user should not be logged in if provided TOTP code is incorrect.
+```
 
 ## Early Design Decision 
 * Gitea shall consume a little resource. GitLab is a all-in-one solution including CI/CD, gists, etc.,
@@ -173,6 +183,11 @@ including Linux, macOS, and Windows, on x86, amd64, ARM and PowerPC architecture
   
 * Gitea should be similar to existing Git hosting solutions hence users could migrate from other solutions painlessly.
 Gitea should be able to migrate to another instance of server when required, by carefully designing its data structure and dependencies.
+
+* Gitea should provide more security to its end user. To accomplish that, Gitea
+integrated internal TLS support for its web interface, introduced password-less
+SSH authentication, implemented and strictly comply to RFC 6238 (the TOTP
+algorithm) in order to protect user from the threat of password-stealers.
 
 
 ## Key Stakeholders
