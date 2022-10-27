@@ -136,21 +136,21 @@ Go get code.gitea.io/gitea! Join us by contributing to make this project even be
 
 Gitea provides webhooks to notify an external system of any changes in repositories.
 Also, it provides OAuth/OAuth2 to login, making it easy to integrate with 3rd-party authenticate systems.
+Gitea is also designed to support multiple databases, including MySQL, PostgreSQL, SQLite3, MSSQL, and TiDB. Allowing user to choose from their favourites.
 
 ### Security
 
 Gitea comes with CSRF and XSS protection and HTTPS support. This improves the security of the deployed instance.
 
-### Multi-database support
 
-Gitea is designed to support multiple databases, including MySQL, PostgreSQL, SQLite3, MSSQL, and TiDB. Allowing user to choose from their favourites.
+
 
 
 ## Key Drivers
 
 * Low resource consuming
 ```
-Senario  
+Scenario  
 Source: user  
 Stimulus: normal use  
 Environment: normal operation / startup / shutdown  
@@ -163,7 +163,7 @@ Response measure: the cost of CPU and memory, and the start/stop time, should be
 
 * Safe with 2FA support
 ```
-Senario
+Scenario
 
 Source: User
 Stimulus: Normal use
