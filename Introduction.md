@@ -149,31 +149,12 @@ Gitea comes with CSRF and XSS protection and HTTPS support. This improves the se
 ## Key Drivers
 
 * Low resource consuming
-```
-Scenario  
-Source: user  
-Stimulus: normal use  
-Environment: normal operation / startup / shutdown  
-Artifact: processors  
-Response: occupy CPU and memory  
-Response measure: the cost of CPU and memory, and the start/stop time, should be low.  
-```
+* Security
 
 * Cross-platform supported
 
-* Safe with 2FA support
-```
-Scenario
-
-Source: User
-Stimulus: Normal use
-Environment: Normal operation
-Artiface: Communication channels
-Response: Log user in if TOTP code is correct
-Response measure: The user should not be logged in if provided TOTP code is incorrect.
-```
-
 ## Early Design Decision 
+
 * Gitea shall consume a little resource. GitLab is a all-in-one solution including CI/CD, gists, etc.,
 where Gitea aims to only do the code management, issues, etc., without bulit-in CI/CD (but it still retained the ability
 to be integrated with 3rd-party CI/CD platforms, like Jenkins, via webhooks. This is a perfect balance of simplicity and ability).  
@@ -223,3 +204,38 @@ compatible with any deploy environments.
 * Parallel support
 It is inevitable that occasionally Gitea should handle incoming requests at the same time, for example, when two committers pushed
 to the same repository simultaneously.
+
+
+
+## Key Driver Scenario
+
+* Low resource consuming
+
+```
+Scenario  
+
+Source: user  
+Stimulus: git operation such as pull, push, etc.  
+Environment: normal operation / startup / shutdown  
+Artifact: processors  
+Response: occupy CPU and memory  
+Response measure: Memory occupation should be less than 300Mb when Gitea is first run. 
+```
+
+* Security
+
+```
+Scenario
+
+Source: User
+Stimulus: Login
+Environment: Normal operation
+Artiface: Communication channels
+Response: Log user in if TOTP code is correct
+Response measure: The user should not be logged in if provided TOTP code is incorrect.
+```
+
+
+
+## Architecture Tactics
+
