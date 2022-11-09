@@ -214,13 +214,15 @@ to the same repository simultaneously.
 ```
 Scenario  
 
-Source: user  
-Stimulus: git operation such as pull, push, etc.  
-Environment: normal operation / startup / shutdown  
-Artifact: processors  
-Response: occupy CPU and memory  
+Source: User  
+Stimulus: Git operation such as pull, push, etc.  
+Environment: Normal operation  
+Artifact: Processors  
+Response: Occupy CPU and memory  
 Response measure: Memory occupation should be less than 300Mb when Gitea is first run. 
 ```
+
+![LightweightScenario](./LightweightScenario.png)
 
 * Security
 
@@ -231,11 +233,11 @@ Source: User
 Stimulus: Login
 Environment: Normal operation
 Artiface: Communication channels
-Response: Log user in if TOTP code is correct
-Response measure: The user should not be logged in if provided TOTP code is incorrect.
+Response: Log user in according to provided TOTP code
+Response measure: Log user in if TOTP code is correct, otherwise it fails.
 ```
 
-
+![SecurityScenario](./SecurityScenario.png)
 
 ## Architecture Tactics
 
