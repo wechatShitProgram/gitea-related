@@ -243,4 +243,8 @@ Response measure: Log user in if TOTP code is correct, otherwise it fails.
 
 Interoperability: Tailor Interface, by implementing some de facto industry standard APIs, Gitea attains interoperability with 3rd party CI systems and/or custom applications.
 
+![Interoperability](./Interoperability.svg)
+
 Modifiability: By using abstract common services, Gitea can utilise and interact with multiple types of database including MySQL, MSSQL, PostgreSQL, and SQLite3, whereas retaining a unified interface for other parts of code. The detailed implementation can be found [here](https://github.com/go-gitea/gitea/blob/main/models/db/engine.go).
+
+![Modifiability](./Modifiability.svg)
