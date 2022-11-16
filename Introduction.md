@@ -271,3 +271,14 @@ Interoperability: Tailor Interface: Gitea provides no integrated CI/CD itself, b
 Modifiability: By using abstract common services, Gitea can utilise and interact with multiple types of database including MySQL, MSSQL, PostgreSQL, and SQLite3, whereas retaining a unified interface for other parts of code. The detailed implementation can be found [here](https://github.com/go-gitea/gitea/blob/main/models/db/engine.go).
 
 ![Modifiability](./Modifiability.svg)
+
+## Architecture Patterns
+
+#### Client‐Server Pattern
+
+In a scenario of multi-person cooperative development, a Git server is needed for centralized code management. And developers' PCs are the clients. Clients send requests like clone, pull, push via HTTPS or SSH and the server respond to the requests.
+
+![Client-Server-Pattern](./Client‐Server-Pattern.png)
+
+
+
