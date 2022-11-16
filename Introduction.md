@@ -153,6 +153,10 @@ Gitea comes with CSRF and XSS protection and HTTPS support. This improves the se
 
 * Cross-platform supported
 
+* Interoperability
+
+* Modifiability
+
 ## Early Design Decision 
 
 * Gitea shall consume a little resource. GitLab is a all-in-one solution including CI/CD, gists, etc.,
@@ -202,8 +206,7 @@ Moreover, since `git` uses `openssh` and even more tools, gitea should track any
 compatible with any deploy environments.
 
 * Parallel support
-It is inevitable that occasionally Gitea should handle incoming requests at the same time, for example, when two committers pushed
-to the same repository simultaneously.
+It is inevitable that occasionally Gitea should handle incoming requests at the same time, for example, when two committers pushed to the same repository simultaneously.
 
 
 
@@ -239,6 +242,10 @@ Response measure: Log user in if TOTP code is correct, otherwise it fails.
 
 ![SecurityScenario](./SecurityScenario.png)
 
+
+
+* Interoperability
+
 ```
 Scenario
 
@@ -249,7 +256,9 @@ Artiface: Communication channels
 Response: Communicate with 3rd party CI platforms with API when user-specified event was triggered, e.g. when a git push was received / a new version was released, etc..
 Response measure: 3rd CI platforms functioned normally and returned no error.
 ```
+![InteroperabilityScenario](./InteroperabilityScenario.png)
 
+* Modifiability
 ```
 Scenario
 
@@ -260,15 +269,19 @@ Artiface: Persistence storage
 Response: Add a shared unified interface which uses database-specific code to communicate with different databases.
 Response measure: The stored data correctly stored in selected database with no error or corruption.
 ```
-
+![IModifiabilityScenario](./ModifiabilityScenario.png)
 
 ## Architecture Tactics
 
-Interoperability: Tailor Interface: Gitea provides no integrated CI/CD itself, but by implementing some de facto industry standard APIs, Gitea attains interoperability with 3rd party CI systems and/or custom applications.
+* Interoperability
+
+Tailor Interface: Gitea provides no integrated CI/CD itself, but by implementing some de facto industry standard APIs, Gitea attains interoperability with 3rd party CI systems and/or custom applications.
 
 ![Interoperability](./Interoperability.svg)
 
-Modifiability: By using abstract common services, Gitea can utilise and interact with multiple types of database including MySQL, MSSQL, PostgreSQL, and SQLite3, whereas retaining a unified interface for other parts of code. The detailed implementation can be found [here](https://github.com/go-gitea/gitea/blob/main/models/db/engine.go).
+* Modifiability
+
+By using abstract common services, Gitea can utilise and interact with multiple types of database including MySQL, MSSQL, PostgreSQL, and SQLite3, whereas retaining a unified interface for other parts of code. The detailed implementation can be found [here](https://github.com/go-gitea/gitea/blob/main/models/db/engine.go).
 
 ![Modifiability](./Modifiability.svg)
 
