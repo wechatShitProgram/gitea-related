@@ -239,9 +239,32 @@ Response measure: Log user in if TOTP code is correct, otherwise it fails.
 
 ![SecurityScenario](./SecurityScenario.png)
 
+```
+Scenario
+
+Source: User
+Stimulus: CI/CD needs
+Environment: Normal operation
+Artiface: Communication channels
+Response: Communicate with 3rd party CI platforms with API.
+Response measure: 3rd CI platforms functioned normally and returned no error.
+```
+
+```
+Scenario
+
+Source: User
+Stimulus: needs of using different databases
+Environment: Normal operation
+Artiface: Persistence storage
+Response: Add a shared unified interface which uses database-specific code to communicate with different databases.
+Response measure: The stored data correctly stored in selected database with no error or corruption.
+```
+
+
 ## Architecture Tactics
 
-Interoperability: Tailor Interface, by implementing some de facto industry standard APIs, Gitea attains interoperability with 3rd party CI systems and/or custom applications.
+Interoperability: Tailor Interface: Gitea provides no integrated CI/CD itself, but by implementing some de facto industry standard APIs, Gitea attains interoperability with 3rd party CI systems and/or custom applications.
 
 ![Interoperability](./Interoperability.svg)
 
