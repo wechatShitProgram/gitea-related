@@ -246,7 +246,7 @@ Source: User
 Stimulus: CI/CD needs
 Environment: Normal operation
 Artiface: Communication channels
-Response: Communicate with 3rd party CI platforms with API.
+Response: Communicate with 3rd party CI platforms with API when user-specified event was triggered, e.g. when a git push was received / a new version was released, etc..
 Response measure: 3rd CI platforms functioned normally and returned no error.
 ```
 
@@ -254,7 +254,7 @@ Response measure: 3rd CI platforms functioned normally and returned no error.
 Scenario
 
 Source: User
-Stimulus: needs of using different databases
+Stimulus: Users may have different databases as their infrastructure, thus the need of deploying Gitea on different databases
 Environment: Normal operation
 Artiface: Persistence storage
 Response: Add a shared unified interface which uses database-specific code to communicate with different databases.
@@ -272,6 +272,7 @@ Modifiability: By using abstract common services, Gitea can utilise and interact
 
 ![Modifiability](./Modifiability.svg)
 
+
 ## Architecture Patterns
 
 #### Client‐Server Pattern
@@ -279,6 +280,3 @@ Modifiability: By using abstract common services, Gitea can utilise and interact
 In a scenario of multi-person cooperative development, a Git server is needed for centralized code management. And developers' PCs are the clients. Clients send requests like clone, pull, push via HTTPS or SSH and the server respond to the requests.
 
 ![Client-Server-Pattern](./Client‐Server-Pattern.png)
-
-
-
