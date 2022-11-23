@@ -290,6 +290,6 @@ By using abstract common services, Gitea can utilise and interact with multiple 
 
 #### Client‐Server Pattern
 
-In a scenario of multi-person cooperative development, a Git server is needed for centralized code management. And developers' PCs are the clients. Clients send requests like clone, pull, push via HTTPS or SSH and the server respond to the requests.
+In a scenario of multi-person cooperative development, a Git server is needed for centralized code management. And multiple developers' PCs are the clients. Clients send requests like clone, pull, push via HTTPS or SSH and the server respond to the requests. It also act as a client to interact with 3rd party CI/CD platforms to push events and receive and updates from them.
 
-![Client-Server-Pattern](./Client‐Server-Pattern.png)
+![Client-Server-Pattern](./CS.svg)
