@@ -305,3 +305,75 @@ Client-Server pattern is applied twice in Gitea.
    When a software needs to be updated frequently, continuous integration, delivery and deployment are highly needed. After  configuration about the third-party platform is done on Gitea, the client, Gitea deployed on the team server, will send the CI/CD request to the third-party platform whenever the developer submits the code. After receiving the event, the server, the third-party platform completes CI/CD and returns the corresponding execution results to the client.
 
 ![Client-Server-Pattern](./CS.svg)
+
+
+
+## Architecture Evaluation
+
+### Utility Tree
+
+
+### Architecture Approach
+
+<table>
+    <tr>
+        <td>Scenario</td>
+        <td colspan="4">Login</td>
+    </tr>
+    <tr>
+        <td>Q-Attribute</td>
+        <td colspan="4">Security</td>
+    </tr>
+    <tr>
+        <td>Environment</td>
+        <td colspan="4">Normal operation</td>
+    </tr>
+    <tr>
+        <td>Stimulus</td>
+        <td colspan="4">User wants to send git request but dose not login</td>
+    </tr>
+    <tr>
+        <td>Response</td>
+        <td colspan="4">Require user to login</td>
+    </tr>
+    <tr>
+        <td>Architectural Decisions</td>
+        <td>Sensitivity</td>
+        <td>Tradeoff</td>
+        <td>Risk</td>
+        <td>Non-risk</td>
+    </tr>
+    <tr>
+        <td>User name and password login</td>
+        <td></td>
+        <td></td>
+        <td>R1</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>2FA</td>
+        <td>S1</td>
+        <td>TO1</td>
+        <td></td>
+        <td>NR1</td>
+    </tr>
+    <tr>
+        <td>Reasoning</td>
+        <td colspan="4">More reliable and secure authentication method</td>
+    </tr>
+    <tr>
+        <td>Arch. model</td>
+        <td colspan="4">username and password login with additional authentication</td>
+    </tr>
+</table>
+
+**Notes:**
+
+* R1: User name and password are at risk of disclosure.
+* TO1: Security verse peformance. 2FA may reduce system performance and spend more time.
+* S1: 2FA is sensitive to user's phone number if SMS verification code is chosen as authentication.
+* NR1: 2FA is a reliable solution.
+
+**Reasoning:**
+* The 2FA key is less likely to be disclosed than the user name and password because it can be used only once and must be used within the validity period.
+
