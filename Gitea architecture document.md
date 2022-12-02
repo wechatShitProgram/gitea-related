@@ -395,3 +395,23 @@ Client-Server pattern is applied twice in Gitea.
 **Reasoning:**
 * The 2FA key is less likely to be disclosed than the user name and password because it can be used only once and must be used within the validity period.
 
+**Architectural model:**
+![Architectural model](./images/ArchitectureModel.png)
+
+## Division of Project
+| Work                     | Name                                                         |
+| ------------------------ | ------------------------------------------------------------ |
+| Introduction             | 陈卓颖，林厚延                                         |
+| Features                 |陈卓颖，林厚延                    |
+|  Context                 |陈卓颖，林厚延                                                      |
+| Quality Attribute        | 陈卓颖，林厚延                                         |
+| Key Driver               | 陈卓颖，林厚延                                              |
+| Early Decision           | 陈卓颖，林厚延                                         |
+| Key stakeholders         | 陈卓颖，林厚延                                              |
+| Technical Context        | 林厚延                                                       |
+| Key Driver Scenario      | 陈卓颖，林厚延                                                 |
+| Architecture Tactics     | 林厚延 |
+| Architecture Patterns    | 陈卓颖                                                 |
+| Architecture Evaluation  | 陈卓颖                                                 |
+| PPT                      | 中期报告：林厚延；终期报告：陈卓颖                     |
+| Draw illustrations       | 林厚延                                                 |
