@@ -390,6 +390,7 @@ Client-Server pattern is applied twice in Gitea.
 * R1: Username and password are at risk of disclosure.
 * R2: Users' phones might lost, or be stolen.
 * NR1: TOTP is a reliable & standardised solution.
+* NR2: Code via SMS is also reliable most of the time, since user's phone is in the control of its owner.
 
 **Reasoning:**
 * The 2FA key is less likely to be disclosed than the user name and password because it can be used only once and must be used within the validity period.
