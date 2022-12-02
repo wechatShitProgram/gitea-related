@@ -286,6 +286,13 @@ By using abstract common services, Gitea can utilise and interact with multiple 
 ![Modifiability](./Modifiability.svg)
 
 
+* Security
+
+Users, especially enterprise users, may have more security concerns. Thus an extra authentication method other than username and password. To address this problem, Gitea allows utilising one more method (to be concrete, TOTP-based one-time code) to authenticate user, providing added security.
+
+![Security](./Security.svg)
+
+
 ## Architecture Patterns
 
 #### Client‐Server Pattern
