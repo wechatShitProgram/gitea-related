@@ -337,11 +337,11 @@ Client-Server pattern is applied twice in Gitea.
     </tr>
     <tr>
         <td>Stimulus</td>
-        <td colspan="4">User wants to send git request but dose not login</td>
+        <td colspan="4">User wants to more security</td>
     </tr>
     <tr>
         <td>Response</td>
-        <td colspan="4">Require user to login</td>
+        <td colspan="4">Allow user to add additional authentication method</td>
     </tr>
     <tr>
         <td>Architectural Decisions</td>
@@ -351,35 +351,45 @@ Client-Server pattern is applied twice in Gitea.
         <td>Non-risk</td>
     </tr>
     <tr>
-        <td>User name and password login</td>
+        <td>Username and password</td>
         <td></td>
         <td></td>
         <td>R1</td>
         <td></td>
     </tr>
     <tr>
-        <td>2FA</td>
+        <td>TOTP (RFC 6238)</td>
         <td>S1</td>
         <td>TO1</td>
         <td></td>
         <td>NR1</td>
     </tr>
     <tr>
+        <td>Code via SMS</td>
+        <td>S2</td>
+        <td>TO2</td>
+        <td>R2</td>
+        <td>NR2</td>
+    </tr>
+    <tr>
         <td>Reasoning</td>
-        <td colspan="4">More reliable and secure authentication method</td>
+        <td colspan="4">More reliable, secure, and easy-to-configure authentication method</td>
     </tr>
     <tr>
         <td>Arch. model</td>
-        <td colspan="4">username and password login with additional authentication</td>
+        <td colspan="4">Username and password login with additional authentication</td>
     </tr>
 </table>
 
 **Notes:**
 
-* R1: User name and password are at risk of disclosure.
-* TO1: Security verse peformance. 2FA may reduce system performance and spend more time.
-* S1: 2FA is sensitive to user's phone number if SMS verification code is chosen as authentication.
-* NR1: 2FA is a reliable solution.
+* S1: TOTP generates a time-based code which expires in 30 seconds, and therefore can be used to authenticate.
+* S2: A one-time code will be sent via 3rd party SMS provider to user's phone to verify user's login.
+* TO1: Requires accurate time on both server and client sides.
+* TO2: User has to have a phone number. SMS fees also applies.
+* R1: Username and password are at risk of disclosure.
+* R2: Users' phones might lost, or be stolen.
+* NR1: TOTP is a reliable & standardised solution.
 
 **Reasoning:**
 * The 2FA key is less likely to be disclosed than the user name and password because it can be used only once and must be used within the validity period.
