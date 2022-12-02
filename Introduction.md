@@ -288,7 +288,7 @@ By using abstract common services, Gitea can utilise and interact with multiple 
 
 * Security
 
-Users, especially enterprise users, may have more security concerns. Thus an extra authentication method other than username and password. To address this problem, Gitea allows utilising one more method (to be concrete, TOTP-based one-time code) to authenticate user, providing added security.
+Authenticate actors: Users, especially enterprise users, may have more security concerns. Thus an extra authentication method other than username and password. To address this problem, Gitea allows utilising one more method (to be concrete, TOTP-based one-time code) to authenticate user, providing added security.
 
 ![Security](./Security.svg)
 
@@ -318,7 +318,7 @@ Client-Server pattern is applied twice in Gitea.
 ## Architecture Evaluation
 
 ### Utility Tree
-
+![UtilityTree](./UtilityTree.png)
 
 ### Architecture Approach
 
@@ -337,7 +337,7 @@ Client-Server pattern is applied twice in Gitea.
     </tr>
     <tr>
         <td>Stimulus</td>
-        <td colspan="4">Users, especially enterprise users, may have more security concerns and want more security</td>
+        <td colspan="4">Users, especially enterprise users, may have more security concerns and want more security with 2FA</td>
     </tr>
     <tr>
         <td>Response</td>
@@ -388,7 +388,7 @@ Client-Server pattern is applied twice in Gitea.
 * TO1: Requires accurate time on both server and client sides.
 * TO2: User has to have a phone number. SMS fees also applies.
 * R1: Username and password are at risk of disclosure.
-* R2: Users' phones might lost, or be stolen.
+* R2: Users' phones might be missing or stolen.
 * NR1: TOTP is a reliable & standardised solution.
 * NR2: Code via SMS is also reliable most of the time, since user's phone is in the control of its owner.
 
