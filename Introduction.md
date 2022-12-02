@@ -337,7 +337,7 @@ Client-Server pattern is applied twice in Gitea.
     </tr>
     <tr>
         <td>Stimulus</td>
-        <td colspan="4">User wants to more security</td>
+        <td colspan="4">Users, especially enterprise users, may have more security concerns and want more security</td>
     </tr>
     <tr>
         <td>Response</td>
