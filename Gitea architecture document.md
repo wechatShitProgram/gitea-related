@@ -225,7 +225,7 @@ Response: Occupy CPU and memory
 Response measure: Memory occupation should be less than 300Mb when Gitea is first run. 
 ```
 
-![LightweightScenario](./LightweightScenario.png)
+![LightweightScenario](./images/LightweightScenario.png)
 
 * Security
 
@@ -240,7 +240,7 @@ Response: Log user in according to provided TOTP code
 Response measure: Log user in if TOTP code is correct, otherwise it fails.
 ```
 
-![SecurityScenario](./SecurityScenario.png)
+![SecurityScenario](./images/SecurityScenario.png)
 
 
 
@@ -256,7 +256,7 @@ Artiface: Communication channels
 Response: Communicate with 3rd party CI platforms with API when user-specified event was triggered, e.g. when a git push was received / a new version was released, etc..
 Response measure: 3rd CI platforms functioned normally and returned no error.
 ```
-![InteroperabilityScenario](./InteroperabilityScenario.png)
+![InteroperabilityScenario](./images/InteroperabilityScenario.png)
 
 * Modifiability
 ```
@@ -269,7 +269,7 @@ Artiface: Persistence storage
 Response: Add a shared unified interface which uses database-specific code to communicate with different databases.
 Response measure: The stored data correctly stored in selected database with no error or corruption.
 ```
-![IModifiabilityScenario](./ModifiabilityScenario.png)
+![IModifiabilityScenario](./images/ModifiabilityScenario.png)
 
 ## Architecture Tactics
 
@@ -277,20 +277,20 @@ Response measure: The stored data correctly stored in selected database with no 
 
 Tailor Interface: Gitea provides no integrated CI/CD itself, but by implementing some de facto industry standard APIs, Gitea attains interoperability with 3rd party CI systems and/or custom applications.
 
-![Interoperability](./Interoperability.svg)
+![Interoperability](./images/Interoperability.svg)
 
 * Modifiability
 
 By using abstract common services, Gitea can utilise and interact with multiple types of database including MySQL, MSSQL, PostgreSQL, and SQLite3, whereas retaining a unified interface for other parts of code. The detailed implementation can be found [here](https://github.com/go-gitea/gitea/blob/main/models/db/engine.go).
 
-![Modifiability](./Modifiability.svg)
+![Modifiability](./images/Modifiability.svg)
 
 
 * Security
 
 Authenticate actors: Users, especially enterprise users, may have more security concerns. Thus an extra authentication method other than username and password. To address this problem, Gitea allows utilising one more method (to be concrete, TOTP-based one-time code) to authenticate user, providing added security.
 
-![Security](./Security.svg)
+![Security](./images/Security.svg)
 
 
 ## Architecture Patterns
@@ -311,14 +311,14 @@ Client-Server pattern is applied twice in Gitea.
 
    When a software needs to be updated frequently, continuous integration, delivery and deployment are highly needed. After  configuration about the third-party platform is done on Gitea, the client, Gitea deployed on the team server, will send the CI/CD request to the third-party platform whenever the developer submits the code. After receiving the event, the server, the third-party platform completes CI/CD and returns the corresponding execution results to the client.
 
-![Client-Server-Pattern](./CS.svg)
+![Client-Server-Pattern](./images/CS.svg)
 
 
 
 ## Architecture Evaluation
 
 ### Utility Tree
-![UtilityTree](./UtilityTree.png)
+![UtilityTree](./images/UtilityTree.png)
 
 ### Architecture Approach
 
